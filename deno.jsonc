@@ -1,7 +1,11 @@
 {
   "name": "@blckbrry/lz4",
-  "version": "0.1.5",
-  "exports": "./mod.ts",
+  "version": "0.1.6",
+  "exports": {
+      ".": "./mod.ts",
+      "./polyfill": "./mod_polyfill.ts",
+      "./runtime_agnostic": "./mod_runtime_agnostic.ts"
+  },
   "tasks": {
     "test": "deno test",
     "build": "deno run -A ./scripts/build.ts"

@@ -1,24 +1,29 @@
 [package]
 name = "deno_lz4"
 description = "lz4 wasm module for deno"
-repository = "https://github.com/denosaurs/deno_lz4"
+repository = "https://github.com/Blckbrry-Pi/deno-lz4"
 license = "MIT"
-version = "0.1.3"
-authors = ["Elias SJögreen"]
-edition = "2018"
+version = "0.1.5"
+authors = ["Blckbrry-Pi", "Elias SJögreen"]
+edition = "2021"
 publish = false
 
 [lib]
 crate-type = ["cdylib"]
+path = "wasm/lib.rs"
 
 [dependencies]
 lz4-compression = "0.7.0"
-wasm-bindgen = "0.2.88"
+wee_alloc = "0.4.5"
 
 [profile.release]
+opt-level = "s"
 lto = true
+
+[profile.tiny]
+opt-level = "s"
+panic = "abort"
+inherits = "release"
 
 [package.metadata.wasm-pack.profile.release]
 wasm-opt = ["-Oz", "--enable-mutable-globals"]
-
-[features]

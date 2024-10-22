@@ -1,6 +1,6 @@
 {
-  "name": "@denosaurs/lz4",
-  "version": "0.1.4",
+  "name": "@blckbrry/lz4",
+  "version": "0.1.5",
   "exports": "./mod.ts",
   "tasks": {
     "test": "deno test",
@@ -9,6 +9,6 @@
   "lock": false,
   "imports": {
     "@std/encoding": "jsr:@std/encoding@0.221",
-    "terser": "npm:terser@5.24.0"
+    "@blckbrry/polywasm": "jsr:@blckbrry/polywasm@^0.1.4"
   }
 }
